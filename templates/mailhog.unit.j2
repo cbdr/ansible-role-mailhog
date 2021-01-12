@@ -4,7 +4,7 @@ After=syslog.target network.target
 
 [Service]
 Type=simple
-ExecStart={{ mailhog_install_dir }}/mailhog
+ExecStart={{ mailhog_install_dir }}/mailhog -api-bind-addr=0.0.0.0:80 -ui-bind-addr=0.0.0.0:80
 StandardOutput=journal
 Restart=on-failure
 
